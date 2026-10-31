@@ -130,19 +130,30 @@
         /* -------------------------------------------------- */
         /* ESTILOS DE LA INVITACIÓN */
         /* -------------------------------------------------- */
-        .hero {
-            background: linear-gradient(rgba(194, 132, 131, 0.55), rgba(222, 165, 164, 0.75)), 
-                        url('FOTO.jpeg');
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+       /* Estilo base para el Hero (Portadas móviles y escritorio) */
+            .hero {
+                background-image: linear-gradient(rgba(194, 132, 131, 0.55), rgba(222, 165, 164, 0.75)), 
+                                  url('FOTO1.jpeg'); /* Reemplaza por tu foto principal */
+                background-size: cover;
+                background-position: center top; /* Centra la imagen priorizando los rostros arriba */
+                background-repeat: no-repeat;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            /* Ajustes específicos para Computadoras y Pantallas Grandes */
+            @media (min-width: 992px) {
+                .hero {
+                    background-size: contain; /* Ajusta la imagen completa sin recortarla */
+                    background-color: var(--blush-principal); /* Rellena los laterales en tono blush si la foto es vertical */
+                    background-position: center center;
+                }
+            }
 
         .nombre-quinceanera {
             font-family: 'Alex Brush', cursive;
@@ -322,7 +333,7 @@
                 <div class="row mt-4">
                     <div class="col-md-6 mb-3">
                         <h5 style="color: var(--blush-oscuro);">Mis Padres</h5>
-                        <p>Juan Mannuel Flores Guerra<br>Irais Martinez Cruz</p>
+                        <p>Juan Manuel Flores Guerra<br>Irais Martinez Cruz</p>
                     </div>
                     <div class="col-md-6 mb-3">
                         <h5 style="color: var(--blush-oscuro);">Mis Padrinos</h5>
